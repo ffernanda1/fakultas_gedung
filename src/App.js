@@ -5,7 +5,7 @@ import Gedung from './component/gedung';
 
 const App = () => {
     const [data, setData] = useState([])
-    const TABLE_HEAD = ["id", "id Fakultas", "Nama Resmi", "Nama Singkat", ""];
+    const TABLE_HEAD = ["id", "id Fakultas", "Nama Resmi", "Nama Singkat", "Nama Asing", ""];
     const fetchPosts = async () => {
         await axios.get('https://api.codefm.my.id/fakultas/'
         ).then(function (response) {
@@ -82,6 +82,15 @@ const App = () => {
                                         className="font-normal"
                                     >
                                         {data.nama_singkat}
+                                    </Typography>
+                                </td>
+                                <td className={classes}>
+                                    <Typography
+                                        variant="small"
+                                        color="blue-gray"
+                                        className="font-normal"
+                                    >
+                                        {data.nama_asing}
                                     </Typography>
                                 </td>
 
